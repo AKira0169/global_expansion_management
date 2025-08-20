@@ -19,7 +19,6 @@ export class AppService {
 
   async topVendors(): Promise<any> {
     const matchRepo = this.dataSource.getRepository(Match);
-
     // Step 1: vendors and avg score per country (last 30 days)
     const rawResults = await matchRepo
       .createQueryBuilder('m')
@@ -62,18 +61,14 @@ export class AppService {
         .select('p.id', 'id')
         .where('p.country = :country', { country })
         .getRawMany();
-
       const projectIds = projects.map((p) => p.id);
-
       if (projectIds.length === 0) {
         countryDocCounts[country] = 0;
         continue;
       }
-
       const count = await this.researchDocModel.countDocuments({
         projectId: { $in: projectIds },
       });
-
       countryDocCounts[country] = count;
     }
 
