@@ -109,14 +109,15 @@ MYSQL_DATABASE=mydb
 MYSQL_USER=myuser
 MYSQL_PASSWORD=xxxxxxxxxxxx
 MYSQL_PORT=3306
-MYSQL_HOST=localhost || for docker-compose it would be mysql
+MYSQL_HOST=localhost || change localhost to mysql for docker-compose
+
 
 JWT_SECRET=xxxxxxxx
 JWT_EXPIRES_IN=4h
 ACCESSTOKEN_COOKIE_EXPIRES_IN=3600000
 MONGODB_URI=mongodb://localhost:27017/global_expansion_management
 MONGO_DB=global_expansion_management
-MONGO_URI=mongodb://localhost:27017 || for docker-compose it would be mongodb
+MONGO_URI=mongodb://localhost:27017 ||  change localhost to mongodb for docker-compose
 
 
 RESEND_API_KEY='xxxxxxxxxxxxxxxxxxxxxxxxx'
