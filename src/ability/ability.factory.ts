@@ -3,6 +3,7 @@ import { createMongoAbility, MongoAbility, AbilityBuilder } from '@casl/ability'
 import { User } from 'src/users/entities/user.entity';
 import { Role } from 'src/users/enums/roles.enum';
 import { Project } from 'src/projects/entities/project.entity';
+import { Vendor } from 'src/vendors/entities/vendor.entity';
 
 export enum Action {
   Manage = 'manage', // Full control
@@ -12,7 +13,14 @@ export enum Action {
   Delete = 'delete',
 }
 
-export type Subjects = User | Project | typeof User | typeof Project | 'all';
+export type Subjects =
+  | User
+  | Project
+  | Vendor
+  | typeof User
+  | typeof Project
+  | typeof Vendor
+  | 'all';
 
 export type AppAbility = MongoAbility<[Action, Subjects]>;
 

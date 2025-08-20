@@ -9,6 +9,7 @@ import { AbilityModule } from './ability/ability.module';
 import { AuthModule } from './auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
 import { ProjectsModule } from './projects/projects.module';
+import { VendorsModule } from './vendors/vendors.module';
 
 @Module({
   imports: [
@@ -37,6 +38,7 @@ import { ProjectsModule } from './projects/projects.module';
     UsersModule,
     AbilityModule,
     ProjectsModule,
+    VendorsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
