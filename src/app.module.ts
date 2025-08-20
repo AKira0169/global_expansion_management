@@ -13,6 +13,7 @@ import { VendorsModule } from './modules/vendors/vendors.module';
 import { MatchesModule } from './modules/matches/matches.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ResearchDocumentsModule } from './modules/research-documents/research-documents.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -42,7 +43,7 @@ import { ResearchDocumentsModule } from './modules/research-documents/research-d
       }),
       inject: [ConfigService],
     }),
-
+    ScheduleModule.forRoot(),
     AuthModule,
     UsersModule,
     AbilityModule,

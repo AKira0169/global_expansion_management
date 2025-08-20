@@ -9,4 +9,6 @@ export default () => ({
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN,
   ACCESSTOKEN_COOKIE_EXPIRES_IN: process.env.ACCESSTOKEN_COOKIE_EXPIRES_IN,
   MONGODB_URI: process.env.MONGODB_URI,
+  RESEND_API_KEY: process.env.RESEND_API_KEY,
+  RESEND_EMAIL: process.env.RESEND_EMAIL,
 });
