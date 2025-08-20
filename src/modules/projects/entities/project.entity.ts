@@ -1,7 +1,7 @@
-import { User } from 'src/modules/users/entities/user.entity';
+import { User } from '../../users/entities/user.entity';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, JoinColumn, OneToMany } from 'typeorm';
 import { ProjectStatus } from '../enums/ProjectStatus';
-import { Match } from 'src/modules/matches/entities/match.entity';
+import { Match } from '../../matches/entities/match.entity';
 
 @Entity()
 export class Project {

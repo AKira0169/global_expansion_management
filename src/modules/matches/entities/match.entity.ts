@@ -1,5 +1,5 @@
-import { Project } from 'src/modules/projects/entities/project.entity';
-import { Vendor } from 'src/modules/vendors/entities/vendor.entity';
+import { Project } from '../../projects/entities/project.entity';
+import { Vendor } from '../../vendors/entities/vendor.entity';
 import { Entity, ManyToOne, PrimaryGeneratedColumn, Column, Unique } from 'typeorm';
 
 @Entity('matches')

@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Match } from 'src/modules/matches/entities/match.entity';
+import { Match } from '../../matches/entities/match.entity';
 
 @Entity()
 export class Vendor {

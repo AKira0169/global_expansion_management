@@ -9,7 +9,7 @@ import {
   OneToMany,
 } from 'typeorm';
 import { Role } from '../enums/roles.enum';
-import { Project } from 'src/modules/projects/entities/project.entity';
+import { Project } from '../../projects/entities/project.entity';
 
 @Entity()
 export class User {
