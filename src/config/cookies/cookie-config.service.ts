@@ -6,7 +6,6 @@ import { CookieOptions } from 'express';
 export class CookieConfigService {
   public readonly cookieOptions: {
     accessToken: CookieOptions;
-    refreshToken: CookieOptions;
   };
 
   constructor(private configService: ConfigService) {
@@ -15,19 +14,7 @@ export class CookieConfigService {
         httpOnly: true,
         secure: true,
         sameSite: 'none',
-        maxAge: parseInt(
-          this.configService.getOrThrow('ACCESSTOKEN_COOKIE_EXPIRES_IN'),
-          10,
-        ),
-      },
-      refreshToken: {
-        httpOnly: true,
-        secure: true,
-        sameSite: 'none',
-        maxAge: parseInt(
-          this.configService.getOrThrow('REFRESHTOKEN_COOKIE_EXPIRES_IN'),
-          10,
-        ),
+        maxAge: parseInt(this.configService.getOrThrow('ACCESSTOKEN_COOKIE_EXPIRES_IN'), 10),
       },
     };
   }

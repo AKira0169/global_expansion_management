@@ -12,6 +12,7 @@ import { UsersModule } from 'src/users/users.module';
 @Module({
   imports: [
     JwtModule.registerAsync({
+      global: true,
       useFactory: (config: ConfigService) => ({
         secret: config.getOrThrow('JWT_SECRET'),
         signOptions: { expiresIn: config.getOrThrow('JWT_EXPIRES_IN') },
@@ -21,8 +22,8 @@ import { UsersModule } from 'src/users/users.module';
     UsersModule,
     PassportModule,
   ],
+  controllers: [AuthController],
   providers: [AuthService, LocalStrategy, JwtStrategy, CookieConfigService],
   exports: [AuthService, CookieConfigService],
-  controllers: [AuthController],
 })
 export class AuthModule {}

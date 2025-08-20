@@ -5,4 +5,7 @@ export default () => ({
   MYSQL_PASSWORD: process.env.MYSQL_PASSWORD,
   MYSQL_HOST: process.env.MYSQL_HOST,
   MYSQL_PORT: process.env.MYSQL_PORT,
+  JWT_SECRET: process.env.JWT_SECRET,
+  JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN,
+  ACCESSTOKEN_COOKIE_EXPIRES_IN: process.env.ACCESSTOKEN_COOKIE_EXPIRES_IN,
 });

@@ -6,6 +6,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import config from './config/config';
 import { AbilityModule } from './ability/ability.module';
+import { AuthModule } from './auth/auth.module';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -29,6 +31,8 @@ import { AbilityModule } from './ability/ability.module';
       }),
       inject: [ConfigService],
     }),
+
+    AuthModule,
     UsersModule,
     AbilityModule,
   ],

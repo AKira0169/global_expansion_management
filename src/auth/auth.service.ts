@@ -23,12 +23,12 @@ export class AuthService {
     }
     throw new UnauthorizedException('Invalid email or password');
   }
+
   login(user: User, res: Response) {
     const payload: TokenPayload = {
       userId: user.id,
       email: user.email,
     };
-
     const accessToken = this.jwtService.sign(payload);
 
     res.cookie('accessToken', accessToken, this.cookieConfigService.cookieOptions.accessToken);
