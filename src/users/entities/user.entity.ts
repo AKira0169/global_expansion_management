@@ -1,12 +1,24 @@
 import * as bcrypt from 'bcrypt';
-import { Entity, Column, PrimaryColumn, Generated, BeforeInsert, BeforeUpdate } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryColumn,
+  Generated,
+  BeforeInsert,
+  BeforeUpdate,
+  OneToMany,
+} from 'typeorm';
 import { Role } from '../enums/roles.enum';
+import { Project } from 'src/projects/entities/project.entity';
 
 @Entity()
 export class User {
   @PrimaryColumn({ type: 'uuid' })
   @Generated('uuid')
   id: string;
+  @OneToMany(() => Project, (project) => project.user)
+  projects: Project[];
+
   @Column()
   firstName: string;
   @Column()
