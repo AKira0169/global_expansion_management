@@ -26,20 +26,18 @@ services:
       - mongodb_data:/data/db
 
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: nestjs-app
     restart: always
     ports:
       - '3000:3000'
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
     depends_on:
       - mysql
       - mongodb
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    command: npm run start:dev
 
 volumes:
   mysql_data:
