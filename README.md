@@ -12,7 +12,7 @@ A full-stack NestJS project with MySQL and MongoDB. This repository includes see
 
 ## deployment link
 
-[url](http://wsg0gg0occ8k00gks80ksksc.5.75.159.70.sslip.io)
+[Link](http://wsg0gg0occ8k00gks80ksksc.5.75.159.70.sslip.io)
 
 --
 
