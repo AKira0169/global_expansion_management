@@ -8,7 +8,11 @@ export const ProjectFactory = setSeederFactory(Project, () => {
   project.name = faker.person.firstName();
   project.budget = Number(faker.commerce.price({ min: 10000, max: 100000, dec: 0 }));
   project.country = faker.helpers.arrayElement(['egypt', 'america', 'france']);
-  project.services_needed = faker.helpers.arrayElements(['service1', 'service2', 'service3']);
+  project.services_needed = faker.helpers.arrayElements(
+    ['service1', 'service2', 'service3', 'service4', 'service5'],
+    2,
+  );
+
   project.status = faker.helpers.arrayElement([
     ProjectStatus.PENDING,
     ProjectStatus.ACTIVE,
