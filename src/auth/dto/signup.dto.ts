@@ -1,4 +1,12 @@
-import { IsEmail, IsNotEmpty, IsOptional, IsString, IsStrongPassword } from 'class-validator';
+import {
+  IsEmail,
+  IsEnum,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  IsStrongPassword,
+} from 'class-validator';
+import { Role } from 'src/modules/users/enums/roles.enum';
 
 export class SignUpDto {
   @IsString()
@@ -26,4 +34,9 @@ export class SignUpDto {
   @IsNotEmpty()
   @IsStrongPassword()
   password: string;
+
+  // Just for testing other wise i would forbidden applying roles manually
+  @IsEnum(Role)
+  @IsOptional()
+  role?: Role;
 }
