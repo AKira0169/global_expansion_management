@@ -5,6 +5,7 @@ import { Role } from 'src/users/enums/roles.enum';
 import { Project } from 'src/projects/entities/project.entity';
 import { Vendor } from 'src/vendors/entities/vendor.entity';
 import { Match } from 'src/matches/entities/match.entity';
+import { ResearchDocument } from 'src/research-documents/entities/research-document.entity';
 
 export enum Action {
   Manage = 'manage', // Full control
@@ -19,10 +20,12 @@ export type Subjects =
   | Project
   | Vendor
   | Match
+  | ResearchDocument
   | typeof User
   | typeof Project
   | typeof Vendor
   | typeof Match
+  | typeof ResearchDocument
   | 'all';
 
 export type AppAbility = MongoAbility<[Action, Subjects]>;

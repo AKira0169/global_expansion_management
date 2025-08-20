@@ -18,6 +18,9 @@ export class Project {
   matches: Match[];
 
   @Column()
+  name: string;
+
+  @Column()
   country: string;
 
   @Column({ type: 'simple-array', nullable: true })
