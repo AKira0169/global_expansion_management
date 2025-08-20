@@ -1,18 +1,18 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from './users/users.module';
+import { UsersModule } from './modules/users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import config from './config/config';
 import { AbilityModule } from './ability/ability.module';
 import { AuthModule } from './auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
-import { ProjectsModule } from './projects/projects.module';
-import { VendorsModule } from './vendors/vendors.module';
-import { MatchesModule } from './matches/matches.module';
+import { ProjectsModule } from './modules/projects/projects.module';
+import { VendorsModule } from './modules/vendors/vendors.module';
+import { MatchesModule } from './modules/matches/matches.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ResearchDocumentsModule } from './research-documents/research-documents.module';
+import { ResearchDocumentsModule } from './modules/research-documents/research-documents.module';
 
 @Module({
   imports: [

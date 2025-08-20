@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Match } from 'src/matches/entities/match.entity';
+import { Match } from 'src/modules/matches/entities/match.entity';
 
 @Entity()
 export class Vendor {
@@ -16,8 +16,8 @@ export class Vendor {
   services_offered: string[];
 
   @Column({ type: 'double' })
-  rating: Number;
+  rating: number;
 
   @Column({ type: 'double' })
-  response_sla_hours: Number;
+  response_sla_hours: number;
 }

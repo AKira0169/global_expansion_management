@@ -1,8 +1,9 @@
-import { Project } from 'src/projects/entities/project.entity';
-import { Vendor } from 'src/vendors/entities/vendor.entity';
-import { Entity, ManyToOne, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Project } from 'src/modules/projects/entities/project.entity';
+import { Vendor } from 'src/modules/vendors/entities/vendor.entity';
+import { Entity, ManyToOne, PrimaryGeneratedColumn, Column, Unique } from 'typeorm';
 
 @Entity()
+@Unique(['projectId', 'vendorId'])
 export class Match {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -18,7 +19,7 @@ export class Match {
   readonly vendorId: string;
 
   @Column({ type: 'double' })
-  score: Number;
+  score: number;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;

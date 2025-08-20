@@ -14,7 +14,7 @@ import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
 import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
 import { UserParam } from 'src/Decorator/user-param.decorator';
-import { User } from 'src/users/entities/user.entity';
+import { User } from 'src/modules/users/entities/user.entity';
 import { AbilitiesGuard } from 'src/guards/abilities.guard';
 import { CheckAbility } from 'src/Decorator/abilities.decorator';
 import { Action, type AppAbility } from 'src/ability/ability.factory';
@@ -50,6 +50,11 @@ export class ProjectsController {
   @Get('user')
   findByUserId(@UserParam() user: User) {
     return this.projectsService.findByUserId(user.id);
+  }
+
+  @Get(':id/matches/rebuild')
+  async projectVendorMatching(@Param('id') id: string) {
+    return await this.projectsService.rebuildProjectVendorMatching(id);
   }
 
   @Get(':id')

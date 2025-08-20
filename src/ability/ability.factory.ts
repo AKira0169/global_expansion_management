@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { createMongoAbility, MongoAbility, AbilityBuilder } from '@casl/ability';
-import { User } from 'src/users/entities/user.entity';
-import { Role } from 'src/users/enums/roles.enum';
-import { Project } from 'src/projects/entities/project.entity';
-import { Vendor } from 'src/vendors/entities/vendor.entity';
-import { Match } from 'src/matches/entities/match.entity';
-import { ResearchDocument } from 'src/research-documents/entities/research-document.entity';
+import { User } from 'src/modules/users/entities/user.entity';
+import { Role } from 'src/modules/users/enums/roles.enum';
+import { Project } from 'src/modules/projects/entities/project.entity';
+import { Vendor } from 'src/modules/vendors/entities/vendor.entity';
+import { Match } from 'src/modules/matches/entities/match.entity';
+import { ResearchDocument } from 'src/modules/research-documents/entities/research-document.entity';
 
 export enum Action {
   Manage = 'manage', // Full control

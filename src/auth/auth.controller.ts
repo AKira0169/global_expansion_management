@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { SignUpDto } from './dto/signup.dto';
 import { UserParam } from 'src/Decorator/user-param.decorator';
 import type { Response } from 'express';
-import { User } from 'src/users/entities/user.entity';
+import { User } from 'src/modules/users/entities/user.entity';
 
 @Controller('auth')
 export class AuthController {

@@ -5,8 +5,8 @@ import { SignUpDto } from './dto/signup.dto';
 import { TokenPayload } from 'src/types/token.payload';
 import type { Response } from 'express';
 import { CookieConfigService } from 'src/config/cookies/cookie-config.service';
-import { UsersService } from 'src/users/users.service';
-import { User } from 'src/users/entities/user.entity';
+import { UsersService } from 'src/modules/users/users.service';
+import { User } from 'src/modules/users/entities/user.entity';
 
 @Injectable()
 export class AuthService {
