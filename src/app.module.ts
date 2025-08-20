@@ -10,6 +10,9 @@ import { AuthModule } from './auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
 import { ProjectsModule } from './projects/projects.module';
 import { VendorsModule } from './vendors/vendors.module';
+import { MatchesModule } from './matches/matches.module';
+import { MongooseModule } from '@nestjs/mongoose';
+import { ResearchDocumentsModule } from './research-documents/research-documents.module';
 
 @Module({
   imports: [
@@ -33,12 +36,20 @@ import { VendorsModule } from './vendors/vendors.module';
       }),
       inject: [ConfigService],
     }),
+    MongooseModule.forRootAsync({
+      useFactory: (config: ConfigService) => ({
+        uri: config.getOrThrow('MONGODB_URI'),
+      }),
+      inject: [ConfigService],
+    }),
 
     AuthModule,
     UsersModule,
     AbilityModule,
     ProjectsModule,
     VendorsModule,
+    MatchesModule,
+    ResearchDocumentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,10 +1,12 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Match } from 'src/matches/entities/match.entity';
 
 @Entity()
 export class Vendor {
   @PrimaryGeneratedColumn('uuid')
   id: string;
-
+  @OneToMany(() => Match, (match) => match.vendor)
+  matches: Match[];
   @Column()
   name: string;
   @Column({ type: 'simple-array' })

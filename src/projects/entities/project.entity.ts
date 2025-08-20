@@ -1,6 +1,7 @@
 import { User } from 'src/users/entities/user.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, JoinColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, JoinColumn, OneToMany } from 'typeorm';
 import { ProjectStatus } from '../enums/ProjectStatus';
+import { Match } from 'src/matches/entities/match.entity';
 
 @Entity()
 export class Project {
@@ -12,6 +13,9 @@ export class Project {
   user: User;
   @Column({ name: 'userId' })
   readonly userId: string;
+
+  @OneToMany(() => Match, (match) => match.project)
+  matches: Match[];
 
   @Column()
   country: string;
