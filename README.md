@@ -43,6 +43,14 @@ POST /vendors
 
 --
 
+## Seeds
+
+npm run seed
+
+npm run seed:mongo
+
+--
+
 ## schema diagrams
 
 // DBML derived from your TypeORM entities: User, Project, Vendor, Match
