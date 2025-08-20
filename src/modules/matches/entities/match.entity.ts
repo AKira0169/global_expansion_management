@@ -2,7 +2,7 @@ import { Project } from 'src/modules/projects/entities/project.entity';
 import { Vendor } from 'src/modules/vendors/entities/vendor.entity';
 import { Entity, ManyToOne, PrimaryGeneratedColumn, Column, Unique } from 'typeorm';
 
-@Entity()
+@Entity('matches')
 @Unique(['projectId', 'vendorId'])
 export class Match {
   @PrimaryGeneratedColumn('uuid')

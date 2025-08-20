@@ -17,7 +17,7 @@ export class Project {
   @OneToMany(() => Match, (match) => match.project)
   matches: Match[];
 
-  @Column()
+  @Column({ type: 'varchar' })
   name: string;
 
   @Column()

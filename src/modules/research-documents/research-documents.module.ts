@@ -13,6 +13,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   ],
   controllers: [ResearchDocumentsController],
   providers: [ResearchDocumentsService],
-  exports: [ResearchDocumentsService],
+  exports: [
+    ResearchDocumentsService,
+    MongooseModule.forFeature([{ name: ResearchDocument.name, schema: ResearchDocumentSchema }]),
+  ],
 })
 export class ResearchDocumentsModule {}
