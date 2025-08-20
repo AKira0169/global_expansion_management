@@ -12,11 +12,11 @@ const dbName = process.env.MONGO_DB || 'global_expansion_management';
 async function seed() {
   // 1️⃣ Connect to MySQL via mysql2 (no TypeORM needed)
   const connection = await mysql.createConnection({
-    host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT),
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
+    host: process.env.MYSQL_HOST,
+    port: Number(process.env.MYSQL_PORT),
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
   });
 
   const [rows] = await connection.execute('SELECT id FROM project');
