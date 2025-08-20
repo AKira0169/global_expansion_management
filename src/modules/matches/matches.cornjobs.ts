@@ -17,7 +17,8 @@ export class MatchesCornJob {
     private readonly emailService: EmailService,
   ) {}
 
-  @Cron(CronExpression.EVERY_DAY_AT_MIDNIGHT)
+  //  CHANGE THIS TO EVERT_MIDNIGHT BUT FOR NOW JUST FOR TESTING
+  @Cron(CronExpression.EVERY_5_MINUTES)
   async handleCron() {
     console.log('Running daily vendor–project match refresh...');
     const projectRepo = this.dataSource.getRepository(Project);
