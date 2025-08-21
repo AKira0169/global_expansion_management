@@ -13,11 +13,6 @@ export const ProjectFactory = setSeederFactory(Project, () => {
     2,
   );
 
-  project.status = faker.helpers.arrayElement([
-    ProjectStatus.PENDING,
-    ProjectStatus.ACTIVE,
-    ProjectStatus.INACTIVE,
-    ProjectStatus.REJECTED,
-  ]);
+  project.status = faker.helpers.arrayElement([ProjectStatus.ACTIVE]);
   return project;
 });
